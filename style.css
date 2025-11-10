@@ -1,0 +1,58 @@
+/* Main style for Synverta site */
+body {
+  margin: 0; padding: 0; font-family: "Segoe UI", Arial, sans-serif; background: #f7f9fb; color: #232528; line-height: 1.6;
+}
+nav {
+  background: #164194; padding: 0.6em 1.5em; display: flex; gap: 1.2em; align-items: center;
+}
+nav .logo {
+  color: #fff; font-weight: bold; font-size: 1.3em; margin-right: auto; text-decoration: none;
+  letter-spacing: 0.5px;
+}
+nav a {
+  color: #eaf0fa; text-decoration: none; transition: color .2s;
+  padding: 0.3em 0.6em; border-radius: 4px;
+}
+nav a.active, nav a:hover { background: #203a63; color: #fff; font-weight: bold; }
+header.hero {
+  padding: 2.5em 1em 2em; background: #1e56a5; color: #fff; text-align: center;
+}
+header.hero h1 { font-size: 2.2em; margin: 0 0 0.2em; }
+header.hero p { font-size: 1.2em; margin: 0 auto 1.5em; max-width: 600px; }
+.button {
+  display: inline-block; background: #fbbf24; color: #222; border-radius: 5px;
+  padding: 0.5em 1em; text-decoration: none; font-weight: 500;
+  box-shadow: 0 3px 8px rgba(34,66,131,0.07);
+  margin-top: 1em;
+  transition: background .1s;
+}
+.button:hover { background: #f9db70; }
+main { padding: 2em 1em; max-width: 900px; margin: 0 auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 15px #e6e9f4; margin-top: -40px; position: relative; }
+section { margin-bottom: 2.5em; }
+h1, h2 { color: #163166; font-weight: 600; }
+h2 { margin-top: 1.2em; margin-bottom: 0.4em; }
+ul { margin: 0 0 1.2em 1.4em; }
+ul.columns { columns: 2 200px; column-gap: 1.5em; margin: 1em 0; }
+ul.columns li { margin-bottom: 0.2em; }
+form.contact-form {
+  background: #f7f9fa; padding: 1.6em 1em; border-radius: 8px; box-shadow: 0 1px 8px #eef2f7;
+  max-width: 400px; margin: 0 0 1em 0;
+}
+form.contact-form label {
+  display: block; margin-bottom: 1.2em; color: #1a3359;
+}
+form.contact-form input, form.contact-form textarea {
+  width: 100%; box-sizing: border-box; margin-top: 0.3em; padding: 0.7em; border: 1px solid #d0daec; border-radius: 4px; font-size: 1em; background: #fff;
+}
+form.contact-form button { background: #164194; color: #fff; border: none; border-radius: 4px; padding: 0.7em 1.5em; font-size: 1em; cursor: pointer; transition: background .1s; }
+form.contact-form button:hover { background: #163166; }
+.contact-info { margin-top: 2em; padding-top: 0.5em; }
+footer {
+  margin: 3em auto 0; padding: 2em 1em 1.2em; font-size: 1em; text-align: center;
+  color: #7882a4;
+}
+@media (max-width: 600px) {
+  nav { flex-direction: column; align-items: flex-start; gap: 0.5em; }
+  main { margin-top: 0; padding: 1.2em 0.3em; }
+  ul.columns { columns: 1; }
+}
