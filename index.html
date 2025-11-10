@@ -1,36 +1,181 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>欢迎来到我的博客</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-    body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial; max-width: 800px; margin: 40px auto; padding: 0 20px; color:#222; }
-    header { text-align:center; margin-bottom:30px; }
-    h1 { margin: 0 0 6px; }
-    p.lead { color:#555; }
-    a.button { display:inline-block; margin-top:16px; padding:8px 14px; background:#0366d6; color:#fff; text-decoration:none; border-radius:6px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNVERTA - Innovating the Future</title>
+    <link rel="stylesheet" href="assets/css/style.css"> 
+    <style>
+        /* Basic inline styles for demonstration.
+           Ideally, move these to your assets/css/style.css file. */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8fa;
+            color: #333;
+        }
+        .container {
+            width: 85%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        header {
+            background: #1a2a6c; /* Deep blue, example brand color */
+            color: white;
+            padding-top: 20px;
+            min-height: 80px;
+            border-bottom: #0e1736 5px solid;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            padding-bottom: 10px;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        nav {
+            background: #2b419c; /* Slightly lighter blue */
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1em;
+            margin: 0 15px;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #3d5fb8;
+            border-radius: 5px;
+        }
+        .hero {
+            background: url('https://via.placeholder.com/1500x500?text=SYNVERTA+Hero+Image') no-repeat center center/cover; /* Placeholder hero image */
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.5em;
+        }
+        .content-section {
+            padding: 30px 0;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        .content-section h2 {
+            color: #1a2a6c;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding-top: 20px;
+        }
+        .feature-item {
+            background: #f0f3f7;
+            padding: 20px;
+            border-left: 5px solid #2b419c;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .feature-item h3 {
+            color: #2b419c;
+            margin-top: 0;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>欢迎来到我的博客</h1>
-    <p class="lead">这是用 GitHub Pages 托管的第一个页面。恭喜你！</p>
-    <a class="button" href="#about">开始编辑你的第一页</a>
-  </header>
 
-  <section id="about">
-    <h2>如何修改这页内容</h2>
-    <ol>
-      <li>登录 GitHub → 打开仓库 <strong>Synverta/Synverta.github.io</strong></li>
-      <li>点击页面上方的 <strong>index.html</strong>，然后点右上角的 <strong>Edit</strong>（铅笔图标）</li>
-      <li>修改文字后向下滚动，写一条 Commit 信息（比如 "update homepage"），然后点击 <strong>Commit changes</strong></li>
-      <li>打开 https://synverta.github.io （大约等 1 分钟）即可看到更改</li>
-    </ol>
-  </section>
+    <header>
+        <div class="container">
+            <h1>SYNVERTA</h1>
+            <p>Leading the Way in [Your Industry/Technology]</p>
+        </div>
+    </header>
 
-  <footer style="margin-top:40px; color:#666; font-size:14px;">
-    <p>提示：如果页面没有出现，确认仓库名是 <strong>Synverta.github.io</strong>（注意大小写无关但拼写要对）。</p>
-  </footer>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a> 
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Innovating Solutions for a Smarter Future</h2>
+            <p>Empowering businesses with cutting-edge [Your Key Technology] solutions.</p>
+            <a href="about.html" style="background-color: #f1c40f; color: #1a2a6c; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; display: inline-block;">Learn More</a>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2>Welcome to SYNVERTA</h2>
+            <p>At SYNVERTA, we believe in the power of innovation to transform industries and improve lives. Specializing in [Your Core Competency, e.g., AI-driven analytics, sustainable energy solutions, advanced software development], we provide tailored solutions that drive efficiency, foster growth, and redefine possibilities for our clients worldwide.</p>
+            <p>Explore how our expertise and passion for technology can help you achieve your strategic objectives.</p>
+        </div>
+    </section>
+
+    <section class="content-section" style="background-color: #eef2f7;">
+        <div class="container">
+            <h2>Our Core Offerings</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Advanced Analytics</h3>
+                    <p>Unlock insights from your data with our powerful analytics tools and expert data scientists.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Custom Software Development</h3>
+                    <p>Tailor-made software solutions designed to meet your unique business requirements and challenges.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Cloud Integration</h3>
+                    <p>Seamlessly integrate your operations with scalable and secure cloud infrastructure.</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px;"><a href="services.html" style="background-color: #2b419c; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold;">View All Services</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SYNVERTA. All rights reserved.</p>
+            <p>
+                <a href="privacy.html" style="color: white; text-decoration: none; margin: 0 10px;">Privacy Policy</a> |
+                <a href="terms.html" style="color: white; text-decoration: none; margin: 0 10px;">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>
