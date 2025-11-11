@@ -47,6 +47,7 @@ form.contact-form input, form.contact-form textarea {
 form.contact-form button { background: #164194; color: #fff; border: none; border-radius: 4px; padding: 0.7em 1.5em; font-size: 1em; cursor: pointer; transition: background .1s; }
 form.contact-form button:hover { background: #163166; }
 .contact-info { margin-top: 2em; padding-top: 0.5em; }
+.blog-date { color: #7882a4; font-size: 0.9em; margin-left: 0.5em; }
 footer {
   margin: 3em auto 0; padding: 2em 1em 1.2em; font-size: 1em; text-align: center;
   color: #7882a4;

@@ -2,19 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Blog</title>
+  <title>Blog | Synverta</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the latest updates and insights from Synverta's chemical industry experts.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <nav>
+    <a class="logo" href="index.html">Synverta</a>
+    <a href="about.html">About Us</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+    <a href="blog.html" class="active">Blog</a>
+  </nav>
+  <header class="hero">
     <h1>Synverta Blog</h1>
     <p>Discover the latest updates and insights from Synverta's chemical industry experts.</p>
   </header>
   <main>
-    <ul id="blog-list">
-      <!-- Articles will dynamically load here -->
-    </ul>
+    <section>
+      <h2>Latest Articles</h2>
+      <ul id="blog-list">
+        <!-- Articles will dynamically load here -->
+      </ul>
+    </section>
   </main>
   <script>
     // Predefined list of blog posts
@@ -29,10 +40,13 @@
       const li = document.createElement('li');
       li.innerHTML = `
         <a href='${post.url}'>${post.title}</a>
-        <span style="color: gray; font-size: 0.9em;">(${post.date})</span>
+        <span class="blog-date">(${post.date})</span>
       `;
       listElement.appendChild(li);
     });
   </script>
+  <footer>
+    &copy; 2025 Synverta. All Rights Reserved.
+  </footer>
 </body>
 </html>
