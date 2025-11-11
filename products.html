@@ -1,67 +1,82 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <title>Products | Synverta</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="View featured chemical products on Synverta B2B platform: APIs, intermediates, additives, and more.">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品中心 - Synverta</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 960px; margin: auto; }
+        header { text-align: center; margin-bottom: 40px; }
+        h1 { color: #1a1a1a; }
+        #searchInput { 
+            width: 100%; 
+            padding: 12px; 
+            margin-bottom: 20px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        #productList { list-style: none; padding: 0; }
+        .product-item { 
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            padding: 15px 20px; 
+            margin-bottom: 10px; 
+            border-radius: 5px;
+            display: block; /* 默认显示 */
+        }
+        .product-item a { text-decoration: none; color: #0056b3; font-size: 1.2em; }
+        .product-item .cas { color: #555; font-size: 0.9em; margin-top: 5px; }
+    </style>
 </head>
 <body>
-  <nav>
-    <a class="logo" href="index.html">Synverta</a>
-    <a href="about.html">About Us</a>
-    <a href="products.html" class="active">Products</a>
-    <a href="contact.html">Contact</a>
-    <a href="blog.html">Blog</a>
-  </nav>
-  <header>
-    <h1>Products</h1>
-    <p>
-      Browse some of the featured chemical products listed on Synverta.  
-      To publish a new product, simply edit this page and add your product information in the same format.
-    </p>
-  </header>
-  <main>
-    <!-- Product Item Example -->
-    <section class="product-list">
-      <article class="product-card">
-        <h2>Paracetamol (Acetaminophen)</h2>
-        <ul>
-          <li><strong>CAS No.:</strong> 103-90-2</li>
-          <li><strong>Category:</strong> API (Active Pharmaceutical Ingredient)</li>
-          <li><strong>Origin:</strong> China</li>
+    <div class="container">
+        <header>
+            <h1>产品中心</h1>
+            <p>在这里查找我们所有的产品</p>
+        </header>
+
+        <input type="text" id="searchInput" placeholder="通过产品名称或 CAS 号搜索...">
+
+        <ul id="productList">
+            <!-- 
+              *** 产品列表模板 ***
+              以后每增加一个产品，复制下面的 <li class="product-item">...</li> 代码块，
+              并修改 href, 产品名称 和 CAS 号。
+            -->
+            <li class="product-item" data-name="示例产品A" data-cas="123-45-6">
+                <h3><a href="product-a.html">示例产品A</a></h3>
+                <p class="cas">CAS: 123-45-6</p>
+            </li>
+            <li class="product-item" data-name="示例产品B" data-cas="789-01-2">
+                <h3><a href="product-b.html">示例产品B</a></h3>
+                <p class="cas">CAS: 789-01-2</p>
+            </li>
+            <!-- 在这里继续添加更多产品 -->
         </ul>
-        <p>
-          Widely used analgesic and antipyretic. Synverta-certified manufacturers, export to over 30 countries, GMP grade available.
-        </p>
-        <p><strong>Contact:</strong> <a href="mailto:contact@synverta.org">contact@synverta.org</a></p>
-      </article>
-      <article class="product-card">
-        <h2>Vitamin C (Ascorbic Acid)</h2>
-        <ul>
-          <li><strong>CAS No.:</strong> 50-81-7</li>
-          <li><strong>Category:</strong> Food & Feed Additives</li>
-          <li><strong>Origin:</strong> China</li>
-        </ul>
-        <p>
-          Food and pharmaceutical grade, bulk supply. Trusted by global brands and certified under ISO, HACCP, and FSSC.
-        </p>
-        <p><strong>Contact:</strong> <a href="mailto:contact@synverta.org">contact@synverta.org</a></p>
-      </article>
-      <!-- 新产品粘贴到这里 -->
-    </section>
-    <section>
-      <h2>How to Publish a Product?</h2>
-      <ol>
-        <li>Edit <strong>products.html</strong> on <a href="https://github.com/Synverta/Synverta.github.io" target="_blank">GitHub</a>.</li>
-        <li>Copy and paste an <code>&lt;article class="product-card"&gt;...&lt;/article&gt;</code> block, and fill in your product details.</li>
-        <li>Commit and wait a minute—products will display instantly!</li>
-      </ol>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 Synverta. All Rights Reserved.
-  </footer>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const productList = document.getElementById('productList');
+        const items = productList.getElementsByClassName('product-item');
+
+        searchInput.addEventListener('keyup', function() {
+            const filter = searchInput.value.toLowerCase();
+            
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i];
+                const name = item.getAttribute('data-name').toLowerCase();
+                const cas = item.getAttribute('data-cas').toLowerCase();
+                
+                if (name.includes(filter) || cas.includes(filter)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+        });
+    </script>
 </body>
 </html>
