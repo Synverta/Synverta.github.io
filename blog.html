@@ -1,44 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Chemical Industry Blog | Synverta</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Directory of insights, news, articles and updates from Synverta’s global chemical industry team.">
-  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+  <title>Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <a class="logo" href="index.html">Synverta</a>
-    <a href="about.html">About Us</a>
-    <a href="products.html">Products</a>
-    <a href="contact.html">Contact</a>
-    <a href="blog.html" class="active">Blog</a>
-  </nav>
-  <!-- 主要变动在 header，添加 hero 类，与首页等风格一致 -->
-  <header class="hero">
+  <header>
     <h1>Synverta Blog</h1>
-    <p>Explore our latest industry insights, news, and updates.</p>
+    <p>Discover the latest updates and insights from Synverta's chemical industry experts.</p>
   </header>
   <main>
-    <section>
-      <ul class="blog-list">
-        <!-- 一下仅为示例，发布新文章时添加新<li> -->
-        <li>
-          <a href="blog-2025-welcome.html">Welcome to the Synverta Blog</a>
-          <span class="blog-date">2025-11-10</span>
-        </li>
-        <!-- 新的博客始终加在上方或下方 -->
-      </ul>
-      <p style="margin-top:2em;font-size:1.1em;color:#667;">
-        Click a title to read the full article.<br>
-        If you want to publish a new blog, just create a new html, then add its link here.
-      </p>
-    </section>
+    <ul id="blog-list">
+      <!-- Articles will dynamically load here -->
+    </ul>
   </main>
-  <footer>
-    &copy; 2025 Synverta. All Rights Reserved.
-  </footer>
+  <script>
+    // Predefined list of blog posts
+    const posts = [
+      { title: "In-Depth Investigative Report on Isophorone Diamine (IPDA)", url: "blog-posts/blog-ipda-report.html", date: "2025-11-11" },
+      { title: "Welcome to the Synverta Blog", url: "blog-posts/blog-2025-welcome.html", date: "2025-11-10" }
+    ];
+
+    // Insert posts dynamically
+    const listElement = document.getElementById('blog-list');
+    posts.forEach(post => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <a href='${post.url}'>${post.title}</a>
+        <span style="color: gray; font-size: 0.9em;">(${post.date})</span>
+      `;
+      listElement.appendChild(li);
+    });
+  </script>
 </body>
 </html>
