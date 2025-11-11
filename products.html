@@ -30,7 +30,7 @@
         margin-bottom: 1em;
         border-radius: 6px;
         transition: box-shadow .2s;
-        display: block; /* Ensure items are visible by default */
+        display: none; /* Items are hidden by default, shown by JS */
     }
     .product-item:hover {
         box-shadow: 0 4px 12px rgba(34,66,131,0.08);
@@ -46,6 +46,29 @@
         font-size: 0.9em;
         margin-top: 5px;
         display: block;
+    }
+    /* Pagination Styles */
+    #pagination {
+        margin-top: 2em;
+        text-align: center;
+    }
+    .page-btn {
+        background: #f7f9fa;
+        border: 1px solid #d0daec;
+        color: #164194;
+        padding: 0.5em 1em;
+        margin: 0 0.2em;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background .2s;
+    }
+    .page-btn:hover {
+        background: #eaf0fa;
+    }
+    .page-btn.active {
+        background: #164194;
+        color: #fff;
+        border-color: #164194;
     }
   </style>
 </head>
@@ -77,17 +100,33 @@
           *** Product List Template ***
           For each new product, copy the <li class="product-item">...</li> block below.
           Update the href, product name, and CAS number.
+          The script will automatically handle showing and hiding them.
+          NOTE: I've added more examples to demonstrate pagination.
         -->
-        <li class="product-item" data-name="Example Product A" data-cas="123-45-6">
-            <a href="product-a.html">Example Product A</a>
-            <span class="cas">CAS: 123-45-6</span>
-        </li>
-        <li class="product-item" data-name="Example Product B" data-cas="789-01-2">
-            <a href="product-b.html">Example Product B</a>
-            <span class="cas">CAS: 789-01-2</span>
-        </li>
-        <!-- Add more products here -->
+        <li class="product-item" data-name="Example Product 1" data-cas="100-01-1"><a href="product-1.html">Example Product 1</a><span class="cas">CAS: 100-01-1</span></li>
+        <li class="product-item" data-name="Example Product 2" data-cas="100-02-2"><a href="product-2.html">Example Product 2</a><span class="cas">CAS: 100-02-2</span></li>
+        <li class="product-item" data-name="Example Product 3" data-cas="100-03-3"><a href="product-3.html">Example Product 3</a><span class="cas">CAS: 100-03-3</span></li>
+        <li class="product-item" data-name="Example Product 4" data-cas="100-04-4"><a href="product-4.html">Example Product 4</a><span class="cas">CAS: 100-04-4</span></li>
+        <li class="product-item" data-name="Example Product 5" data-cas="100-05-5"><a href="product-5.html">Example Product 5</a><span class="cas">CAS: 100-05-5</span></li>
+        <li class="product-item" data-name="Example Product 6" data-cas="100-06-6"><a href="product-6.html">Example Product 6</a><span class="cas">CAS: 100-06-6</span></li>
+        <li class="product-item" data-name="Example Product 7" data-cas="100-07-7"><a href="product-7.html">Example Product 7</a><span class="cas">CAS: 100-07-7</span></li>
+        <li class="product-item" data-name="Example Product 8" data-cas="100-08-8"><a href="product-8.html">Example Product 8</a><span class="cas">CAS: 100-08-8</span></li>
+        <li class="product-item" data-name="Example Product 9" data-cas="100-09-9"><a href="product-9.html">Example Product 9</a><span class="cas">CAS: 100-09-9</span></li>
+        <li class="product-item" data-name="Example Product 10" data-cas="100-10-0"><a href="product-10.html">Example Product 10</a><span class="cas">CAS: 100-10-0</span></li>
+        <li class="product-item" data-name="Example Product 11" data-cas="100-11-1"><a href="product-11.html">Example Product 11</a><span class="cas">CAS: 100-11-1</span></li>
+        <li class="product-item" data-name="Example Product 12" data-cas="100-12-2"><a href="product-12.html">Example Product 12</a><span class="cas">CAS: 100-12-2</span></li>
+        <li class="product-item" data-name="Example Product 13" data-cas="100-13-3"><a href="product-13.html">Example Product 13</a><span class="cas">CAS: 100-13-3</span></li>
+        <li class="product-item" data-name="Example Product 14" data-cas="100-14-4"><a href="product-14.html">Example Product 14</a><span class="cas">CAS: 100-14-4</span></li>
+        <li class="product-item" data-name="Example Product 15" data-cas="100-15-5"><a href="product-15.html">Example Product 15</a><span class="cas">CAS: 100-15-5</span></li>
+        <li class="product-item" data-name="Example Product 16" data-cas="100-16-6"><a href="product-16.html">Example Product 16</a><span class="cas">CAS: 100-16-6</span></li>
+        <li class="product-item" data-name="Example Product 17" data-cas="100-17-7"><a href="product-17.html">Example Product 17</a><span class="cas">CAS: 100-17-7</span></li>
+        <li class="product-item" data-name="Example Product 18" data-cas="100-18-8"><a href="product-18.html">Example Product 18</a><span class="cas">CAS: 100-18-8</span></li>
+        <li class="product-item" data-name="Example Product 19" data-cas="100-19-9"><a href="product-19.html">Example Product 19</a><span class="cas">CAS: 100-19-9</span></li>
+        <li class="product-item" data-name="Example Product 20" data-cas="100-20-0"><a href="product-20.html">Example Product 20</a><span class="cas">CAS: 100-20-0</span></li>
+        <li class="product-item" data-name="Example Product 21" data-cas="100-21-1"><a href="product-21.html">Example Product 21</a><span class="cas">CAS: 100-21-1</span></li>
+        <li class="product-item" data-name="Example Product 22" data-cas="100-22-2"><a href="product-22.html">Example Product 22</a><span class="cas">CAS: 100-22-2</span></li>
       </ul>
+      <div id="pagination"></div>
     </section>
   </main>
 
@@ -96,24 +135,78 @@
   </footer>
 
   <script>
-    const searchInput = document.getElementById('searchInput');
-    const productList = document.getElementById('productList');
-    const items = productList.getElementsByClassName('product-item');
-
-    searchInput.addEventListener('keyup', function() {
-        const filter = searchInput.value.toLowerCase().trim();
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchInput');
+        const productList = document.getElementById('productList');
+        const items = Array.from(productList.getElementsByClassName('product-item'));
+        const paginationContainer = document.getElementById('pagination');
         
-        for (let i = 0; i < items.length; i++) {
-            const item = items[i];
-            const name = item.getAttribute('data-name').toLowerCase();
-            const cas = item.getAttribute('data-cas').toLowerCase();
-            
-            if (name.includes(filter) || cas.includes(filter)) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
+        const itemsPerPage = 20;
+        let currentPage = 1;
+
+        function displayPage(page, itemsToShow) {
+            // Hide all items
+            items.forEach(item => item.style.display = 'none');
+
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const pageItems = itemsToShow.slice(start, end);
+
+            pageItems.forEach(item => item.style.display = 'block');
+        }
+
+        function setupPagination(itemsToShow) {
+            paginationContainer.innerHTML = '';
+            const pageCount = Math.ceil(itemsToShow.length / itemsPerPage);
+            if (pageCount <= 1) return;
+
+            for (let i = 1; i <= pageCount; i++) {
+                const btn = document.createElement('button');
+                btn.innerText = i;
+                btn.classList.add('page-btn');
+                if (i === currentPage) {
+                    btn.classList.add('active');
+                }
+                btn.addEventListener('click', function() {
+                    currentPage = i;
+                    displayPage(currentPage, itemsToShow);
+                    
+                    // Update active button
+                    document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+                paginationContainer.appendChild(btn);
             }
         }
+        
+        function handleSearchAndPagination() {
+            const filter = searchInput.value.toLowerCase().trim();
+            
+            if (filter) {
+                // If searching, hide pagination and filter all items
+                paginationContainer.style.display = 'none';
+                items.forEach(item => {
+                    const name = item.getAttribute('data-name').toLowerCase();
+                    const cas = item.getAttribute('data-cas').toLowerCase();
+                    if (name.includes(filter) || cas.includes(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            } else {
+                // If not searching, show pagination and display current page
+                paginationContainer.style.display = 'block';
+                currentPage = 1; // Reset to first page
+                setupPagination(items);
+                displayPage(currentPage, items);
+            }
+        }
+
+        searchInput.addEventListener('keyup', handleSearchAndPagination);
+
+        // Initial setup
+        handleSearchAndPagination();
     });
   </script>
 </body>
