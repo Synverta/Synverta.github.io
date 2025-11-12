@@ -7,16 +7,20 @@
 
   <link rel="stylesheet" href="/styles.css" />
   <style>
-    /* From products_product-template.html */
+    /* Local layout styles to align with site look */
     .site-header {
       background: #0b3d91;
       color: #fff;
       padding: 12px 20px;
     }
-    .site-header .brand { font-weight:700; letter-spacing:.5px; color:#fff; text-decoration:none; }
+    .site-header .brand { font-weight: 700; letter-spacing: .5px; }
     .site-nav { display:flex; gap:12px; align-items:center; }
-    .site-nav a { color:#fff; text-decoration:none; padding:6px 8px; }
+    .site-nav a { color: #fff; text-decoration: none; padding:6px 8px; }
     .container { max-width:1100px; margin:20px auto; padding:0 16px; }
+    .product-hero { margin-top:12px; }
+    .product-info h1 { margin:0 0 8px 0; font-size:28px; }
+    .product-info p { margin:0 0 12px 0; color:#333; line-height:1.5; }
+    .cta-row { margin-top:16px; display:flex; gap:12px; align-items:center; }
     footer.site-footer {
       margin-top:40px;
       padding:18px 0;
@@ -25,12 +29,18 @@
       font-size:14px;
     }
     footer .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+    .prod-section { margin-top:18px; }
+    .prop-table { border-collapse: collapse; width:100%; max-width:640px; }
+    .prop-table td, .prop-table th { border:1px solid #e6e9ef; padding:8px; text-align:left; vertical-align:top; }
+    @media (max-width:720px){
+      .site-nav { gap:8px; }
+    }
   </style>
 </head>
 <body>
   <header class="site-header" role="banner">
     <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-      <a class="brand" href="/" aria-label="SYNVERTA home">SYNVERTA</a>
+      <a class="brand" href="/" aria-label="SYNVERTA home" style="color:#fff;text-decoration:none;">SYNVERTA</a>
       <nav class="site-nav" role="navigation" aria-label="Main navigation">
         <a href="/" title="Home">Home</a>
         <a href="/products.html" title="Products">Products</a>
@@ -39,16 +49,6 @@
       </nav>
     </div>
   </header>
-
-  <main class="container" role="main">
-    <article class="product-hero" aria-labelledby="product-title">
-      <div class="product-info">
-        <h1 id="product-title">3-Amino-2-chloro-6-methylphenol</h1>
-        <p class="product-summary">A substituted aminophenol used as an intermediate in dye and hair-color chemistry, and in certain specialty organic syntheses.</p>
-
-        <div class="cta-row" style="margin-top:16px;">
-          <a class="secondary-link" href="/products.html" style="color:#666;text-decoration:none;">Back to products</a>
-        </div>
 
         <section class="product-details" aria-labelledby="details-heading" style="margin-top:18px;">
           <h2 id="details-heading" style="font-size:18px;margin:0 0 8px 0;">Overview</h2>
