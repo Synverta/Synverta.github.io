@@ -21,16 +21,6 @@
     .product-info h1 { margin:0 0 8px 0; font-size:28px; }
     .product-info p { margin:0 0 12px 0; color:#333; line-height:1.5; }
     .cta-row { margin-top:16px; display:flex; gap:12px; align-items:center; }
-    .rfq-text-btn {
-      background: transparent;
-      border: none;
-      color: #0b3d91;
-      text-decoration: underline;
-      cursor: pointer;
-      font-weight:600;
-      padding:0;
-      font-size:16px;
-    }
     footer.site-footer {
       margin-top:40px;
       padding:18px 0;
@@ -64,10 +54,7 @@
         <p class="product-summary">Short product summary goes here. Provide a clear one- or two-line description that highlights the core value or use-case.</p>
 
         <div class="cta-row">
-          <!-- RFQ text button: set the href attribute below to the desired RFQ link. -->
-          <a id="rfq-button" class="rfq-text-btn" href="REPLACE_WITH_RFQ_LINK" aria-label="Request a quote">RFQ</a>
-
-          <!-- Example secondary CTA (optional) -->
+          <!-- RFQ button removed as requested -->
           <a class="secondary-link" href="/products/" style="color:#666;text-decoration:none;">Back to products</a>
         </div>
 
@@ -101,19 +88,6 @@
   <script>
     // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Allow setting the RFQ link via data-rfq-url attribute or fallback to mailto
-    (function(){
-      var rfq = document.getElementById('rfq-button');
-      if(!rfq) return;
-      var dataUrl = rfq.getAttribute('data-rfq-url');
-      if(dataUrl && dataUrl.trim() !== ''){
-        rfq.setAttribute('href', dataUrl);
-      }
-      if(rfq.getAttribute('href') === 'REPLACE_WITH_RFQ_LINK' || !rfq.getAttribute('href')){
-        rfq.setAttribute('href', 'mailto:contact@synverta.org?subject=RFQ%20Request');
-      }
-    })();
   </script>
 </body>
 </html>
