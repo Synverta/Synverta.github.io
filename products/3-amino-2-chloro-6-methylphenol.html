@@ -7,69 +7,79 @@
 
   <link rel="stylesheet" href="/styles.css" />
   <style>
-    .site-header { background:#0b3d91;color:#fff;padding:12px 20px; }
-    .container { max-width:1100px;margin:20px auto;padding:0 16px; }
+    /* From products_product-template.html */
+    .site-header {
+      background: #0b3d91;
+      color: #fff;
+      padding: 12px 20px;
+    }
+    .site-header .brand { font-weight:700; letter-spacing:.5px; color:#fff; text-decoration:none; }
+    .site-nav { display:flex; gap:12px; align-items:center; }
+    .site-nav a { color:#fff; text-decoration:none; padding:6px 8px; }
+    .container { max-width:1100px; margin:20px auto; padding:0 16px; }
+    footer.site-footer {
+      margin-top:40px;
+      padding:18px 0;
+      background:#f5f5f7;
+      color:#222;
+      font-size:14px;
+    }
+    footer .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
   </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-      <a href="/" class="brand">SYNVERTA</a>
-      <nav><a href="/products.html">Products</a></nav>
+      <a class="brand" href="/" aria-label="SYNVERTA home">SYNVERTA</a>
+      <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <a href="/" title="Home">Home</a>
+        <a href="/products.html" title="Products">Products</a>
+        <a href="/about/" title="About">About</a>
+        <a href="/contact/" title="Contact">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <main class="container">
-    <article>
-      <h1>3-Amino-2-chloro-6-methylphenol</h1>
-      <p class="product-summary">A substituted aminophenol used as an intermediate in dye and hair-color chemistry, and in certain specialty organic syntheses.</p>
+  <main class="container" role="main">
+    <article class="product-hero" aria-labelledby="product-title">
+      <div class="product-info">
+        <h1 id="product-title">3-Amino-2-chloro-6-methylphenol</h1>
+        <p class="product-summary">A substituted aminophenol used as an intermediate in dye and hair-color chemistry, and in certain specialty organic syntheses.</p>
 
-      <section>
-        <h2>Overview</h2>
-        <p>3-Amino-2-chloro-6-methylphenol is a multifunctional aromatic intermediate combining amino, chloro and methyl substituents on a phenolic core. It is used primarily in colorant chemistry and as a reactive intermediate for specialty formulations.</p>
+        <div class="cta-row" style="margin-top:16px;">
+          <a class="secondary-link" href="/products.html" style="color:#666;text-decoration:none;">Back to products</a>
+        </div>
 
-        <h3>Synonyms</h3>
-        <ul>
-          <li>3-amino-2-chloro-6-methylphenol</li>
-          <li>2-chloro-6-methyl-3-aminophenol</li>
-        </ul>
+        <section class="product-details" aria-labelledby="details-heading" style="margin-top:18px;">
+          <h2 id="details-heading" style="font-size:18px;margin:0 0 8px 0;">Overview</h2>
+          <p>3-Amino-2-chloro-6-methylphenol is a multifunctional aromatic intermediate combining amino, chloro and methyl substituents on a phenolic core. It is used primarily in colorant chemistry and[...]</p>
 
-        <h3>Applications</h3>
-        <ul>
-          <li>Hair dye intermediates and oxidative colorant chemistry</li>
-          <li>Specialty dye and pigment synthesis</li>
-          <li>Research reagent for synthesis of substituted phenols</li>
-        </ul>
+          <h3>Synonyms</h3>
+          <ul>
+            <li>3-amino-2-chloro-6-methylphenol</li>
+            <li>2-chloro-6-methyl-3-aminophenol</li>
+          </ul>
 
-        <h3>Physical & Chemical Properties</h3>
-        <ul>
-          <li>Appearance: off-white to light yellow crystalline solid</li>
-          <li>Chemical formula: C7H8ClNO</li>
-          <li>Molecular weight: ~165.59 g·mol⁻¹</li>
-          <li>Solubility: moderate in polar organic solvents; limited in water</li>
-        </ul>
-
-        <h3>Handling & Safety</h3>
-        <p>This substituted aminophenol may be an irritant and sensitizer. Use appropriate protective equipment and avoid environmental release.</p>
-        <ul>
-          <li>Wear gloves, goggles and protective clothing; avoid dust and vapors.</li>
-          <li>Handle in well-ventilated area; use fume hood if necessary.</li>
-          <li>Refer to supplier SDS for detailed emergency measures and disposal guidance.</li>
-        </ul>
-
-        <h3>Packaging & Storage</h3>
-        <ul>
-          <li>Packaging: small glass bottles for laboratory quantities; drums/bags for industrial orders.</li>
-          <li>Storage: cool, dry place in tightly sealed containers, away from strong oxidizers and acids.</li>
-        </ul>
-      </section>
+          <h3>Applications</h3>
+          <ul>
+            <li>Hair dye intermediates and oxidative colorant chemistry</li>
+            <li>Specialty dye and pigment synthesis</li>
+            <li>Research reagent for synthesis of substituted phenols</li>
+          </ul>
+        </section>
+      </div>
     </article>
   </main>
 
-  <footer style="margin-top:40px;padding:18px 0;background:#f5f5f7;">
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-      <div><strong>SYNVERTA</strong><div>Contact: <a href="mailto:contact@synverta.org">contact@synverta.org</a></div></div>
-      <div style="color:#666;">© <span id="year"></span> SYNVERTA</div>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <strong>SYNVERTA</strong>
+        <div>Contact: <a href="mailto:contact@synverta.org">contact@synverta.org</a></div>
+      </div>
+      <div class="footer-right" style="color:#666;">
+        © <span id="year"></span> SYNVERTA
+      </div>
     </div>
   </footer>
 

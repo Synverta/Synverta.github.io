@@ -7,78 +7,86 @@
 
   <link rel="stylesheet" href="/styles.css" />
   <style>
-    .site-header { background:#0b3d91;color:#fff;padding:12px 20px; }
-    .container { max-width:1100px;margin:20px auto;padding:0 16px; }
+    /* From products_product-template.html */
+    .site-header {
+      background: #0b3d91;
+      color: #fff;
+      padding: 12px 20px;
+    }
+    .site-header .brand { font-weight:700; letter-spacing:.5px; color:#fff; text-decoration:none; }
+    .site-nav { display:flex; gap:12px; align-items:center; }
+    .site-nav a { color:#fff; text-decoration:none; padding:6px 8px; }
+    .container { max-width:1100px; margin:20px auto; padding:0 16px; }
     .prop-table td,.prop-table th{border:1px solid #e6e9ef;padding:8px;}
+    footer.site-footer {
+      margin-top:40px;
+      padding:18px 0;
+      background:#f5f5f7;
+      color:#222;
+      font-size:14px;
+    }
+    footer .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
   </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-      <a href="/" class="brand">SYNVERTA</a>
-      <nav><a href="/products.html">Products</a></nav>
+      <a class="brand" href="/" aria-label="SYNVERTA home">SYNVERTA</a>
+      <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <a href="/" title="Home">Home</a>
+        <a href="/products.html" title="Products">Products</a>
+        <a href="/about/" title="About">About</a>
+        <a href="/contact/" title="Contact">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <main class="container">
-    <article>
-      <h1>2-Methyl-4-nitroaniline</h1>
-      <p class="product-summary">An aromatic nitroaniline used as an intermediate in dye and agrochemical synthesis; handled as a solid intermediate with specific safety controls due to nitro/aromatic amine hazards.</p>
+  <main class="container" role="main">
+    <article class="product-hero" aria-labelledby="product-title">
+      <div class="product-info">
+        <h1 id="product-title">2-Methyl-4-nitroaniline</h1>
+        <p class="product-summary">An aromatic nitroaniline used as an intermediate in dye and agrochemical synthesis; handled as a solid intermediate with specific safety controls due to nitro/aromatic functionality.</p>
 
-      <section>
-        <h2>Overview</h2>
-        <p>2-Methyl-4-nitroaniline is a substituted aniline bearing a nitro group. It serves as a precursor for dyes, pigments, and specialty chemicals. It is typically supplied as a crystalline solid and used in controlled industrial processes.</p>
+        <div class="cta-row" style="margin-top:16px;">
+          <a class="secondary-link" href="/products.html" style="color:#666;text-decoration:none;">Back to products</a>
+        </div>
 
-        <h3>Synonyms</h3>
-        <ul>
-          <li>2-methyl-4-nitroaniline</li>
-          <li>4-nitro-2-methylaniline</li>
-        </ul>
+        <section class="product-details" aria-labelledby="details-heading" style="margin-top:18px;">
+          <h2 id="details-heading" style="font-size:18px;margin:0 0 8px 0;">Overview</h2>
+          <p>2-Methyl-4-nitroaniline is a substituted aniline bearing a nitro group. It serves as a precursor for dyes, pigments, and specialty chemicals. It is typically supplied as a crystalline solid[...]</p>
 
-        <h3>Applications</h3>
-        <ul>
-          <li>Intermediate for dyes, azo coupling and pigments</li>
-          <li>Agrochemical intermediates and specialty organic synthesis</li>
-          <li>Research reagent in synthetic chemistry</li>
-        </ul>
+          <h3>Synonyms</h3>
+          <ul>
+            <li>2-methyl-4-nitroaniline</li>
+            <li>4-nitro-2-methylaniline</li>
+          </ul>
 
-        <h3>Physical & Chemical Properties</h3>
-        <table class="prop-table" aria-label="Properties">
-          <tr><th>Property</th><th>Typical Value</th></tr>
-          <tr><td>Chemical formula</td><td>C7H8N2O2</td></tr>
-          <tr><td>Molecular weight</td><td>152.15 g·mol⁻¹</td></tr>
-          <tr><td>Appearance</td><td>Yellow to orange crystalline powder</td></tr>
-          <tr><td>Melting point</td><td>~110–116 °C</td></tr>
-          <tr><td>Solubility</td><td>Sparingly soluble in water; soluble in organic solvents like ethanol, acetone, dichloromethane</td></tr>
-        </table>
+          <h3>Physical & Chemical Properties</h3>
+          <table class="prop-table" aria-label="Properties">
+            <tr><th>Property</th><th>Typical Value</th></tr>
+            <tr><td>Chemical formula</td><td>C7H8N2O2</td></tr>
+            <tr><td>Molecular weight</td><td>152.15 g·mol⁻¹</td></tr>
+            <tr><td>Appearance</td><td>Yellow to orange crystalline powder</td></tr>
+            <tr><td>Melting point</td><td>~110–116 °C</td></tr>
+            <tr><td>Solubility</td><td>Sparingly soluble in water; soluble in organic solvents like ethanol, acetone, dichloromethane</td></tr>
+          </table>
 
-        <h3>Specifications</h3>
-        <ul>
-          <li>Purity: typically ≥95–99% (supplier dependent)</li>
-          <li>Appearance: crystalline powder; color may vary</li>
-        </ul>
-
-        <h3>Handling & Safety</h3>
-        <p>Nitroanilines present both nitro and aniline hazards — toxic if absorbed and potentially harmful to aquatic life. Observe:</p>
-        <ul>
-          <li>Use gloves, eye protection and dust control when handling the powder.</li>
-          <li>Avoid inhalation; work in ventilation or fume hood.</li>
-          <li>In case of exposure, follow standard first-aid and seek medical attention for severe effects.</li>
-        </ul>
-
-        <h3>Packaging & Storage</h3>
-        <ul>
-          <li>Packaging: sealed bottles, bags or drums depending on quantity.</li>
-          <li>Storage: store in a cool, dry, ventilated area away from reducing agents and strong bases; keep container tightly closed.</li>
-        </ul>
-      </section>
+          <h3>Handling & Safety</h3>
+          <p>Nitroanilines present nitro and aniline hazards — toxic if absorbed and potentially harmful to aquatic life. Observe protective measures.</p>
+        </section>
+      </div>
     </article>
   </main>
 
-  <footer style="margin-top:40px;padding:18px 0;background:#f5f5f7;">
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-      <div><strong>SYNVERTA</strong><div>Contact: <a href="mailto:contact@synverta.org">contact@synverta.org</a></div></div>
-      <div style="color:#666;">© <span id="year"></span> SYNVERTA</div>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <strong>SYNVERTA</strong>
+        <div>Contact: <a href="mailto:contact@synverta.org">contact@synverta.org</a></div>
+      </div>
+      <div class="footer-right" style="color:#666;">
+        © <span id="year"></span> SYNVERTA
+      </div>
     </div>
   </footer>
 
